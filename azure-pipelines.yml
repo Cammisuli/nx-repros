@@ -11,6 +11,8 @@ pool:
 
 steps:
   - script: yarn install --force --pure-lockfile
+    displayName: install
   - script: yarn nx show projects
-  - script: echo Hello, world!
-    displayName: "Run a one-line script"
+    displayName: show projects
+  - script: yarn nx run-many -t build --parallel 3
+    displayName: build
