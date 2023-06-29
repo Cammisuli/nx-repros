@@ -10,6 +10,7 @@ pool:
   vmImage: windows-latest
 
 steps:
+  - script: reg query "HKLM\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x86"
   - script: yarn install --force --pure-lockfile
     displayName: install
   - script: yarn nx show projects
